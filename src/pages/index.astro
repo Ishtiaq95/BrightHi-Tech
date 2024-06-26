@@ -5,13 +5,94 @@ import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Picture } from "astro:assets";
+
+// Filter brands entries with 'draft: false' & date before current date
+const publishedBrandsMembers = await getCollection("brands", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+
+// Filter products entries with 'draft: false' & date before current date
+const publishedProductsMembers = await getCollection("products", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
 ---
 
 <Layout title="">
   <Container>
     <Hero />
-    <Features />
-    <Logos />
-    <Cta />
+    <!-- <Features /> -->
+
+    <div class="flex flex-col gap-3 mx-auto max-w-8xl">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Brands
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        We have these Brands:
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-8xl mt-12">
+      {
+        publishedBrandsMembers.map((brandsMemberEntry) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={brandsMemberEntry.data.avatar.src}
+                alt={brandsMemberEntry.data.avatar.alt}
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">{brandsMemberEntry.data.name}</h2>
+              <h3 class="text-sm text-slate-500">
+                {brandsMemberEntry.data.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-8xl mt-20">
+      <h2 class="font-bold text-3xl text-gray-800">
+        Products
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        We have these Products:
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-8xl mt-12">
+      {
+        publishedProductsMembers.map((productsMemberEntry) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={productsMemberEntry.data.avatar.src}
+                alt={productsMemberEntry.data.avatar.alt}
+                sizes="(max-width: 800px) 100vw, 400px"
+                width={400}
+                height={400}
+                class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-gray-800">{productsMemberEntry.data.name}</h2>
+              <h3 class="text-sm text-slate-500">
+                {productsMemberEntry.data.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- <Logos /> -->
+    <!-- <Cta /> -->
   </Container>
 </Layout>
