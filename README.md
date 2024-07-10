@@ -1,4 +1,4 @@
-# BrightHighTech - Astro SAAS Starter Website Template
+# Bright Hi-Tech - Astro SAAS Starter Website Template
 
 BrightHighTech is a free starter astro website template for saas, startups, marketing websites, landing pages & blogs. Built with Astro & TailwindCSS.
 

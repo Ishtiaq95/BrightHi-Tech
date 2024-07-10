@@ -5,7 +5,7 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  /*
+  
   {
     title: "Services",
     path: "#",
@@ -14,22 +14,21 @@ const menuitems = [
     ],
   },
   {
-    title: "Pricing",
+    title: "Home",
     path: "/pricing",
   },
   {
-    title: "About",
+    title: "Product",
     path: "/about",
   },
   {
-    title: "Blog",
+    title: "Brands",
     path: "/blog",
   },
   {
-    title: "Contact",
+    title: "About",
     path: "/contact",
   },
-  */
 ];
 ---
 
@@ -38,7 +37,7 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-1000">BrightHigh</span><span
+          ><span class="font-bold text-slate-1000">Bright Hi-</span><span
             class="text-slate-1000">Tech</span
           >
         </a>
@@ -47,7 +46,7 @@ const menuitems = [
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        {/*
+        {
         <ul class="flex flex-col lg:flex-row lg:gap-3">
           {
             menuitems.map((item, index) => (
@@ -78,7 +77,7 @@ const menuitems = [
             ))
           }
         </ul>
-         */}
+         }
         <div class="lg:hidden flex items-center mt-3 gap-4">
           { /* 
           <Link href="#" style="muted" block size="md">Log in</Link>
