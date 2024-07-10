@@ -1,0 +1,435 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'BrightHighTech',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact',
+        href: '/contact',
+        target: '_blank',
+      },
+      { text: 'Learn more', href: '#about' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white highlight"> BrightHighTech</span>: Aerospace Import-Export & Supply Solutions
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+       Empowering global aerospace excellence through precise import-export solutions and comprehensive supply chain management.</span
+      >
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="about"
+    tagline="About"
+    title="What Does BrightHighTech Do?"
+    subtitle="BrightHighTech provides expert import-export solutions and comprehensive supply chain management to streamline logistics, ensure compliance, and optimize efficiency for the aerospace industry."
+    items={[
+      {
+        title: 'Global Aerospace Import-Export Expertise',
+        description:
+          'Discover how BrightHighTech\'s global reach and deep industry knowledge streamline the import-export processes for aerospace components, ensuring timely delivery and compliance.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'Comprehensive Supply Chain Management',
+        description:
+          'Learn about our end-to-end supply chain management services that optimize efficiency, reduce costs, and enhance the reliability of aerospace part deliveries.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Advanced Logistics Solutions for Aerospace',
+        description:
+          'Explore our advanced logistics solutions that include strategic planning, real-time tracking, and secure transport to meet the rigorous demands of the aerospace industry.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Customs Clearance and Compliance',
+        description:
+          'Understand our meticulous approach to customs clearance and regulatory compliance, ensuring your aerospace shipments meet all international standards and regulations.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Strategic Sourcing and Procurement',
+        description:
+          "BrightHighTech offers strategic sourcing and procurement services, connecting you with reliable suppliers to ensure high-quality aerospace components at competitive prices.",
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'Risk Management in Aerospace Supply Chains',
+        description:
+          'Delve into our risk management strategies that identify potential disruptions in the supply chain and implement proactive measures to mitigate them.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Services"
+    title="BrightHighTech's Blueprint"
+    items={[
+      {
+        title: 'Innovative Technology Integration',
+        description:
+          'See how BrightHighTech integrates cutting-edge technology to enhance the efficiency, transparency, and security of aerospace import-export operations.',
+      },
+      {
+        title: 'Sustainable Aerospace Supply Solutions',
+        description:
+          'Learn about our commitment to sustainability and how we implement eco-friendly practices in our supply chain solutions for the aerospace industry.',
+      },
+      {
+        title: 'Supplier Relationship Management',
+        description:
+          'Discover our approach to building and maintaining strong relationships with aerospace suppliers, ensuring consistent quality and reliability.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+      Gain a competitive advantage by incorporating industry leading practices
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Global Market Insights and Analysis',
+        description: `Gain valuable insights into global aerospace markets with our comprehensive analysis, helping you make informed decisions for your business.`,
+      },
+      {
+        title: 'Quality Assurance and Control',
+        description:
+          'Understand our rigorous quality assurance and control processes that ensure every aerospace component meets the highest standards of performance and safety.',
+      },
+      {
+        title: 'Inventory Management and Optimization',
+        description:
+          "Explore our inventory management services that balance supply with demand, reducing excess stock and minimizing shortages.",
+      },
+      {
+        title: 'Freight Forwarding and Transportation',
+        description:
+          'Learn about our specialized freight forwarding and transportation services tailored to the unique needs of the aerospace sector.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Aftermarket Support Services',
+        description:
+          'Discover our aftermarket support services that include spare parts management, repair, and maintenance to keep your aerospace operations running smoothly.',
+      },
+      {
+        title: 'End-to-End Project Management',
+        description:
+          'See how our end-to-end project management services ensure the successful execution of complex aerospace projects, from planning to delivery.',
+      },
+      {
+        title: 'Aerospace Product Lifecycle Management',
+        description:
+          'Explore our product lifecycle management solutions that cover every stage of an aerospace component\'s life, from design to disposal.',
+      },
+      {
+        title: 'Export Documentation and Certification',
+        description: `Understand the importance of accurate export documentation and certification, and how we ensure all paperwork is correctly handled for smooth international transactions.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="How It Works"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Consultation and Planning</span>',
+        description:
+          "Begin with a detailed consultation to understand your specific aerospace needs. Our experts will work with you to develop a customized plan that addresses your import-export and supply chain requirements, ensuring alignment with your business goals.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Sourcing and Procurement</span>',
+        description:
+          "We leverage our global network of trusted suppliers to source high-quality aerospace components. Our procurement specialists ensure competitive pricing and reliable delivery schedules, tailored to meet your operational demands.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Logistics and Compliance</span>',
+        description:
+          'Our team handles all aspects of logistics, including transportation, customs clearance, and regulatory compliance. We use advanced technology for real-time tracking and efficient management of your shipments, ensuring they meet international standards.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Delivery and Support',
+        description:
+          'Once your products are ready, we ensure they are delivered promptly and securely to your specified location. Our support doesn’t end with delivery; we offer ongoing assistance and aftersales support to ensure your complete satisfaction and operational success.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Aerospace Components"
+    subtitle="Explore Essential Aerospace Solutions"
+    tagline="Components"
+    items={[
+      {
+        title: 'Inventory',
+        description: "Discover our meticulously curated selection of essential aerospace components, sourced globally to meet your industry needs.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Avionics',
+        description:
+          "Navigate the skies with precision and safety using our advanced avionics solutions, designed to enhance aircraft performance.",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Propulsion Systems',
+        description:
+          'Power your journey with cutting-edge propulsion systems engineered for efficiency and reliability in aerospace operations.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Structural Components',
+        description:
+          "From fuselage to wings, ensure structural integrity with our robust components crafted to withstand the rigors of flight.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Satellite Technology',
+        description:
+          'Unlock the potential of space exploration with our state-of-the-art satellite technology solutions, pushing boundaries beyond Earth\'s atmosphere.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Ground Support Equipment',
+        description: 'Equip your operations with dependable ground support equipment, ensuring seamless aircraft maintenance and turnaround times.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Maintenance Solutions',
+        description: 'Keep your fleet in prime condition with our comprehensive maintenance solutions, optimizing uptime and operational efficiency.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Consultation Services',
+        description:
+          'Tap into our expertise with tailored consultation services, guiding your aerospace endeavors towards sustainable growth and success.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Contact Us',
+        description: "Connect with our team today to discuss your aerospace needs and discover how BrightHighTech can elevate your operations to new heights.",
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  {/* 
+  <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  />
+*/}
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Explore answers to common questions about our services, policies, and support options."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'What services does BrightHighTech offer?',
+        description:
+          "BrightHighTech specializes in aerospace import-export solutions, supply chain management, logistics, and regulatory compliance services tailored to the aerospace industry.",
+      },
+      {
+        title: 'How can I contact BrightHighTech for support?',
+        description:
+          'You can reach our support team via email at info@brighthi-tech.com or by phone at +92 335 9599187 or +92 332 9599188 or +92 91 560 6279 during business hours.',
+      },
+      {
+        title: 'Does BrightHighTech provide customized solutions?',
+        description:
+          "Yes, we offer customized solutions to meet the unique needs of our clients in the aerospace sector. Contact our sales team to discuss your specific requirements.",
+      },
+      {
+        title: "What regions does BrightHighTech serve?",
+        description:
+          "We serve clients globally, with operations spanning across multiple continents and countries.",
+      },
+      {
+        title: 'How does BrightHighTech ensure product quality?',
+        description:
+          "We uphold rigorous quality standards and work closely with trusted suppliers to ensure that all aerospace components meet industry regulations and customer expectations.",
+      },
+      {
+        title: 'Does BrightHighTech offer emergency support services?',
+        description:
+          "Yes, we provide 24/7 emergency support and Aircraft on Ground (AOG) services to ensure timely assistance for urgent situations.",
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Clients', amount: '1200' },
+      { title: 'Successful Deliveries', amount: '5000' },
+      { title: 'On-Time Delivery Rate', amount: '98%' },
+      { title: 'Customer Satisfaction', amount: '100%' },
+    ]}
+  />
+
+    <!-- Features2 Widget ************** -->
+
+    <Features2
+    title="We are here to help!"
+    items={[
+      {
+        title: 'General support',
+        description: `Get assistance with any general inquiries or issues you may have. Our dedicated support team is here to help you navigate our services and find the information you need.`,
+      },
+      {
+        title: 'Contact sales',
+        description:
+          'Reach out to our sales team for detailed information about our services, pricing, and how we can tailor our solutions to meet your specific aerospace needs. We\'re here to help you make informed decisions.',
+      },
+      {
+        title: 'Technical support',
+        description:
+          'For any technical issues or questions about our products and services, our expert technical support team is ready to provide prompt and effective solutions to ensure smooth operations.',
+      },
+      {
+        title: 'Phone',
+        description: '+92 335 9599187 <br> +92 332 9599188 <br> +92 91 560 6279',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: 'info@brighthi-tech.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Location',
+        description: 'M-9 NWR plaza, Khyber Super Market Peshawar Cantt, 25000, Pakistan',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+{/* 
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get template',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      waste more time! :P
+    </Fragment>
+  </CallToAction>
+*/}
+</Layout>

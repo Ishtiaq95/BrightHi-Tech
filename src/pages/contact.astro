@@ -1,0 +1,79 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Let's Connect!" />
+
+  <ContactUs
+    id="form"
+    title="Drop us a message today!"
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+  title="We are here to help!"
+  items={[
+    {
+      title: 'General support',
+      description: `Get assistance with any general inquiries or issues you may have. Our dedicated support team is here to help you navigate our services and find the information you need.`,
+    },
+    {
+      title: 'Contact sales',
+      description:
+        'Reach out to our sales team for detailed information about our services, pricing, and how we can tailor our solutions to meet your specific aerospace needs. We\'re here to help you make informed decisions.',
+    },
+    {
+      title: 'Technical support',
+      description:
+        'For any technical issues or questions about our products and services, our expert technical support team is ready to provide prompt and effective solutions to ensure smooth operations.',
+    },
+    {
+      title: 'Phone',
+      description: '+92 335 9599187 <br> +92 332 9599188 <br> +92 91 560 6279',
+      icon: 'tabler:headset',
+    },
+    {
+      title: 'Email',
+      description: 'info@brighthi-tech.com',
+      icon: 'tabler:mail',
+    },
+    {
+      title: 'Location',
+      description: 'M-9 NWR plaza, Khyber Super Market Peshawar Cantt, 25000, Pakistan',
+      icon: 'tabler:map-pin',
+    },
+  ]}
+/>
+</Layout>
